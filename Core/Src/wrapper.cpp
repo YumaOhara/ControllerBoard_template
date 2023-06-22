@@ -39,7 +39,7 @@ extern "C" void main_cpp()
 //			 LED緑を点灯
 //			HAL_GPIO_WritePin(GPIOC, GREEN_LED_Pin, GPIO_PIN_SET);
 
-			//PWM無効化　HAL_PWM_Stop()をかく
+			//PWM無効化　HAL_TIM_PWM_Stop()をかく
 		}
 
 		// もし、STARTボタンが押されている(Start == 1)なら、(enable)
@@ -53,7 +53,7 @@ extern "C" void main_cpp()
 //			 LED緑を点灯
 //			HAL_GPIO_WritePin(GPIOC, GREEN_LED_Pin, GPIO_PIN_SET);
 
-			//PWM有効化 HAL_PWM_Start
+			//PWM有効化 HAL_TIM_PWM_Start
 
 		}
 	}
