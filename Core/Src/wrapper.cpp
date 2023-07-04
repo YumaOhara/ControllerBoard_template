@@ -1,15 +1,9 @@
 #include <main.h>
+#include <usart.h>
+//タイマーを使うときはtim.hを有効化
+//#include <tim.h>
 #include "stm32f1xx_hal_uart.h"		// SBDBTとUART通信をするためのライブラリ
 #include "UART1_F710.hpp"
-
-// UART用構造体変数
-extern UART_HandleTypeDef huart2;
-
-// タイマ用構造体変数(適宜コメントアウトを外してタイマを有効化する)
-//extern TIM_HandleTypeDef htim1;
-//extern TIM_HandleTypeDef htim2;
-//extern TIM_HandleTypeDef htim3;
-//extern TIM_HandleTypeDef htim4;
 
 // メイン関数
 extern "C" void main_cpp()
@@ -39,7 +33,7 @@ extern "C" void main_cpp()
 //			 LED緑を点灯
 //			HAL_GPIO_WritePin(GPIOC, GREEN_LED_Pin, GPIO_PIN_SET);
 
-			//PWM無効化　HAL_PWM_Stop()をかく
+			//PWM無効化　HAL_TIM_PWM_Stop()をかく
 		}
 
 		// もし、STARTボタンが押されている(Start == 1)なら、(enable)
@@ -53,7 +47,7 @@ extern "C" void main_cpp()
 //			 LED緑を点灯
 //			HAL_GPIO_WritePin(GPIOC, GREEN_LED_Pin, GPIO_PIN_SET);
 
-			//PWM有効化 HAL_PWM_Start
+			//PWM有効化 HAL_TIM_PWM_Start
 
 		}
 	}
