@@ -30,5 +30,5 @@ extern "C" void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	controller.LeftAxisX  = controller.RxBuffer[3];
 	controller.LeftAxisY  = controller.RxBuffer[4];
 
-	HAL_UART_Receive_IT(huart, controller.RxBuffer, 8);
+	HAL_UART_Receive_IT(&huart2, controller.RxBuffer, 8);
 }
