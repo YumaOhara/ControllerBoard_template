@@ -1,14 +1,11 @@
 // SBDBTからUART通信で受け取ったコントローラのデータを格納
-#include "main.h"
-#include "stm32f1xx_hal_uart.h"
+#include "usart.h"
 #include "UART1_F710.hpp"
-
-extern UART_HandleTypeDef huart2;
 
 Controller controller;
 
 // UART通信の受信完了時に、ボタンのON/OFFやアナログスティックの値を代入
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+extern "C" void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	controller.B     = (controller.RxBuffer[2] & 0b01000000) >> 6;
 	controller.A     = (controller.RxBuffer[2] & 0b00100000) >> 5;
