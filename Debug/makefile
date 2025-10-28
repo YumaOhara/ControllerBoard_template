@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (11.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -49,34 +49,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := ControllerBoard_template
+BUILD_ARTIFACT_NAME := M3508_test
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-ControllerBoard_template.elf \
+M3508_test.elf \
+
+MAP_FILES += \
+M3508_test.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-ControllerBoard_template.list \
-
-OBJCOPY_BIN += \
-ControllerBoard_template.bin \
+M3508_test.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: ControllerBoard_template.elf secondary-outputs
+main-build: M3508_test.elf secondary-outputs
 
 # Tool invocations
-ControllerBoard_template.elf: $(OBJS) $(USER_OBJS) C:\Users\schne\STM32CubeIDE_1.8.0\ControllerBoard_template\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "ControllerBoard_template.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\schne\STM32CubeIDE_1.8.0\ControllerBoard_template\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ControllerBoard_template.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+M3508_test.elf M3508_test.map: $(OBJS) $(USER_OBJS) C:\Users\schne\STM32CubeIDE\workspace_1.13.1\M3508_test\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "M3508_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\schne\STM32CubeIDE\workspace_1.13.1\M3508_test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="M3508_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -85,22 +85,17 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-ControllerBoard_template.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "ControllerBoard_template.list"
-	@echo 'Finished building: $@'
-	@echo ' '
-
-ControllerBoard_template.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "ControllerBoard_template.bin"
+M3508_test.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "M3508_test.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) ControllerBoard_template.bin ControllerBoard_template.elf ControllerBoard_template.list default.size.stdout
+	-$(RM) M3508_test.elf M3508_test.list M3508_test.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

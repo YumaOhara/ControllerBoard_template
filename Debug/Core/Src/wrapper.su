@@ -1,1 +1,4 @@
-wrapper.cpp:7:17:void main_cpp()	8	static
+../Core/Src/wrapper.cpp:32:7:float NormalizeJoystick(int16_t)	24	static
+../Core/Src/wrapper.cpp:46:10:uint16_t SpeedToBiDirPWM(int16_t)	24	static
+../Core/Src/wrapper.cpp:55:6:void CalculateOmniSpeeds(float, float, float)	64	static
+../Core/Src/wrapper.cpp:82:17:void main_cpp()	48	static
