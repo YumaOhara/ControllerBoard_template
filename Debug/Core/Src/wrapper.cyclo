@@ -1,4 +1,6 @@
-../Core/Src/wrapper.cpp:32:7:float NormalizeJoystick(int16_t)	4
-../Core/Src/wrapper.cpp:46:10:uint16_t SpeedToBiDirPWM(int16_t)	3
-../Core/Src/wrapper.cpp:55:6:void CalculateOmniSpeeds(float, float, float)	2
-../Core/Src/wrapper.cpp:82:17:void main_cpp()	16
+../Core/Src/wrapper.cpp:65:8:size_t COBS_decode(const uint8_t*, size_t, uint8_t*)	10
+../Core/Src/wrapper.cpp:97:7:float NormalizeCommand(int8_t)	4
+../Core/Src/wrapper.cpp:109:10:uint16_t SpeedToBiDirPWM(int16_t)	3
+../Core/Src/wrapper.cpp:118:6:void CalculateOmniSpeeds(float, float, float)	2
+../Core/Src/wrapper.cpp:144:6:void HAL_UART_RxCpltCallback(UART_HandleTypeDef*)	13
+../Core/Src/wrapper.cpp:196:17:void main_cpp()	13
